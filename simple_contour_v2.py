@@ -30,6 +30,15 @@ def grad(f,x,y):
     g=autograd.grad
     return np.r_[g(f,0)(x,y),g(f,1)(x,y)]
 def simple_contour(f,c=0.0,delta = 0.01,eps = 2**(-26)):
+    """ Entrée :
+    Une fonction à deux paramètres réels à valeurs réelles : f
+    Une valeur de ligne de niveau : c
+    Un pas de propagation : delta
+    Une précision pour la valeur initiale : eps
+
+    Sortie :
+    Deux listes de coordonnées des abscisses et des ordonnées de la ligne de
+    niveau égale à c"""
     #Initialisation du tracé avec find_seed
     x0 = 0.0
     y0 = find_seed(f,c,eps)
